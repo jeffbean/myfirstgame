@@ -31,7 +31,7 @@ public class Game extends BasicGame {
 		if (container.getInput().isKeyDown(Input.KEY_RIGHT)) {playerX++;}
 		if (container.getInput().isKeyDown(Input.KEY_UP)) {playerY--;}
 		if (container.getInput().isKeyDown(Input.KEY_DOWN)) {playerY++;}
-	}
+	} 
 	public void render(GameContainer container, Graphics g)  {
 		map.render(0, 0);
 		g.drawAnimation(player, playerX, playerY);
