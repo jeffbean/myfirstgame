@@ -14,13 +14,18 @@ public class Game extends StateBasedGame {
 		this.addState(new Play(play));
 	}
 	
+	@Override
+	public void initStatesList(GameContainer gc) throws SlickException {
+		// Need to add the states 
+		this.getState(menu).init(gc, this);
+		this.getState(play).init(gc, this);
+		// What state to go to first
+		this.enterState(menu);
+	}
+	
 	public static void main (String[] args) {
 		
 	}
 
-	@Override
-	public void initStatesList(GameContainer gc) throws SlickException {
-		// TODO Auto-generated method stub
-		
-	}
+	
 } 
