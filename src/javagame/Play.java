@@ -42,7 +42,19 @@ public class Play extends BasicGameState {
 
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
 			throws SlickException {
-		g.drawString("This is the play state!", 100, 100);
+		
+		worldMap.draw(playerPositionX, playerPositionY);
+		player.draw(shiftX, shiftY);
+		g.drawString("Player X:" + playerPositionX + " Y:" + playerPositionY, 100, 10);
+		
+		if(quit==true){
+			g.drawString("Resume (R)", 250, 100);
+			g.drawString("Main Menu (M)", 250, 120);
+			g.drawString("Quit Game (Q)", 250, 140);
+			if(quit==false){
+				g.clear();
+			}
+		}
 	}
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta)
