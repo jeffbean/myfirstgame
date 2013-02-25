@@ -13,10 +13,10 @@ public class Menu extends BasicGameState {
 
 	public String mouseString = "No input yet!";
 	public String welcome = "Welcome to JBean land!";
-	
+
 	Image playNow;
 	Image exitGame;
-	
+
 	int faceX = 200;
 	int faceY = 200;
 
@@ -37,7 +37,7 @@ public class Menu extends BasicGameState {
 		g.drawString(welcome, 100, 50);
 		playNow.draw(100, 100);
 		exitGame.draw(100, 200);
-	
+
 	}
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta)
@@ -46,19 +46,18 @@ public class Menu extends BasicGameState {
 		int xpos = Mouse.getX();
 		int ypos = Mouse.getY();
 		mouseString = "Mouse x:" + xpos + " y: " + ypos;
-		//Play Now Button
-		if((xpos > 100 && xpos < 311) && (ypos > 209 && ypos < 260)) {
-			if(input.isMouseButtonDown(0)){
+		// Play Now Button
+		if ((xpos > 100 && xpos < 311) && (ypos > 209 && ypos < 260)) {
+			if (input.isMouseButtonDown(0)) {
 				sbg.enterState(1);
 			}
 		}
-		//Exit Game
-		if((xpos > 100 && xpos < 311) && (ypos > 109 && ypos < 160)) {
-			if(input.isMouseButtonDown(0)){
+		// Exit Game
+		if ((xpos > 100 && xpos < 311) && (ypos > 109 && ypos < 160)) {
+			if (input.isMouseButtonDown(0)) {
 				System.exit(0);
 			}
 		}
-		
 
 	}
 
